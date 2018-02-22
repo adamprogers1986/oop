@@ -2,11 +2,19 @@
     "autoload": {
         
         "psr-4": {
-            "Src\\Controller\\": "src/Controller",
-            "Src\\Routes\\": "src/Routes",
-            "Src\\Views\\": "src/Views",
-            "Src\\Model\\": "src/Model",
+            "Src\\Site\\Controller\\": "src/Site/Controller",
+            "Src\\Site\\Views\\": "src/Site/Views",
+            "Src\\Site\\Model\\": "src/Site/Model",
+            "Src\\Site\\Twig\\": "src/Site/Twig",
+            "Src\\Site\\Parameters\\": "src/Site/Parameters",
+            "Src\\Admin\\Controller\\": "src/Admin/Controller",
+            "Src\\Admin\\Views\\": "src/Admin/Views",
+            "Src\\Admin\\Model\\": "src/Admin/Model",
+            "Src\\Admin\\Parameters\\": "src/Admin/Parameters",
             "Src\\Parameters\\": "src/Parameters"
         }
+    },
+    "require": {
+        "twig/twig": "^2.4"
     }
 }

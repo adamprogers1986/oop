@@ -1,0 +1,63 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Name>oop</Name>
+    <ProjectGuid>{da22d560-4b88-4ea1-a88f-f000082579e2}</ProjectGuid>
+    <RootNamespace>
+    </RootNamespace>
+    <OutputType>Library</OutputType>
+    <ProjectTypeGuids>{A0786B88-2ADB-4C21-ABE8-AA2D79766269}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <IncludeDebugInformation>true</IncludeDebugInformation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <IncludeDebugInformation>false</IncludeDebugInformation>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="nbproject\private\private.xml" />
+    <Compile Include="nbproject\project.properties" />
+    <Compile Include="nbproject\project.xml" />
+    <Compile Include="src\Controller\SpecController.php" />
+    <Compile Include="src\Controller\MainController.php" />
+    <Compile Include="src\Model\Csv.php" />
+    <Compile Include="src\Parameters\Db--sample.php" />
+    <Compile Include="src\Parameters\Db.php" />
+    <Compile Include="src\Routes\Routing.php" />
+    <Compile Include="src\Twig\partials\footer.html.twig" />
+    <Compile Include="src\Twig\partials\header.html.twig" />
+    <Compile Include="src\Twig\homepage\index.html.twig" />
+    <Compile Include="src\Views\Partials\Footer.php" />
+    <Compile Include="src\Views\Partials\Header.php" />
+    <Compile Include="src\Views\FrontPage.php" />
+    <Compile Include="webmain\mainpage.php" />
+    <Compile Include=".gitignore" />
+    <Compile Include="composer.json" />
+    <Compile Include="composer.lock" />
+    <Compile Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="cache" />
+    <Folder Include="nbproject\private" />
+    <Folder Include="nbproject" />
+    <Folder Include="src\Twig\homepage\" />
+    <Folder Include="src\Cache\" />
+    <Folder Include="src\Controller" />
+    <Folder Include="src\Model" />
+    <Folder Include="src\Parameters" />
+    <Folder Include="src\Routes" />
+    <Folder Include="src\Twig\specification\" />
+    <Folder Include="src\Twig\partials" />
+    <Folder Include="src\Twig" />
+    <Folder Include="src\Views\Partials" />
+    <Folder Include="src\Views" />
+    <Folder Include="src" />
+    <Folder Include="upload" />
+    <Folder Include="webmain\css" />
+    <Folder Include="webmain\js" />
+    <Folder Include="webmain" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="src\Twig\specification\index.html.twig" />
+  </ItemGroup>
+</Project>

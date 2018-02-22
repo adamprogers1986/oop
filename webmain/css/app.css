@@ -1,0 +1,41 @@
+.blue{
+    background-color:#363B3E;
+}
+.navbar-dark .navbar-nav .nav-link{
+    color: #ffffff;
+}
+
+.footer {
+    color: white;
+    
+}
+.footer h2{
+    font-size: 25px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid; 
+}
+
+.card-section .card .card-header{
+   background-color:white;
+   color: black !important;
+}
+.footer .address-section{
+    line-height: 15px !important;
+    
+}
+.footer .address-section{
+    padding-top: 20px;
+    padding-bottom: 20px;
+  
+}
+.footer label{
+    color: white;
+}
+.btn-primary{
+    background: #00005C;
+    
+}
+form.newsletter{
+    padding-bottom:20px;
+} 
