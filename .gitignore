@@ -2,3 +2,4 @@ src/Parameters/Db.php
 nbproject/
 vendor/
 upload/
+bower_components/
