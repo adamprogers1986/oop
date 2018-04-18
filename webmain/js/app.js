@@ -1,12 +1,12 @@
 
  
     $(document).ready(function() {
- 
+      
+      $('.map').rwdImageMaps();
         $(".owl-carousel").owlCarousel({
        
             autoPlay: 3000, //Set AutoPlay to 3 seconds
        
-            
             navigation : true,
            
             loop: true,
@@ -23,8 +23,7 @@
                   items: 2
                 }
             },
-            
-           
+        
             autoheight: true
        
         });

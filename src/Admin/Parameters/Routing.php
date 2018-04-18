@@ -9,7 +9,7 @@ Class Routing {
     protected $routename;
     protected $databaseType;
     protected $template;
-
+    protected $isAdmin;
 
     public function getAddress(){
         $request = parse_url($_SERVER['REQUEST_URI']);
@@ -76,31 +76,31 @@ Class Routing {
         $this->unknown = array('class'=>$this->getClass(), 'function'=>$this->getFunction(), 'template'=>$this->getTemplate());
     }
 
+    public function setIsAdmin($isAdmin){
+        $this->isAdmin = $isAdmin;
+        return $isAdmin;
+    }
+
+    public function getIsAdmin(){
+        return $this;
+    }
     
     public function setRoute(){
-       
-        $this->route[$this->getUrl()] = array('url'=>$this->getUrl(), 'class'=>$this->getClass(), 'function'=>$this->getFunction(), 'template'=>$this->getTemplate(), 'databaseType'=>$this->getDatabaseType());
-        return $this;
-
-    }
-
-    public function setNewRoute($url = "url", $class = "class", $function = "function", $template = "template", $databaseType = "databaseType"){
-        $this->newroute[$url] = array("url"=>$url, "class"=>$class, "function"=>$function, "template"=>$template, "databaseType"=>$databaseType);
+        $this->route[$this->getUrl()] = array('url'=>$this->getUrl(), 'class'=>$this->getClass(), 'function'=>$this->getFunction(), 'template'=>$this->getTemplate(), 'databaseType'=>$this->getDatabaseType(), 'isAdmin'=>$this->getIsAdmin());
         return $this;
     }
 
-    public function getNewRoute(){
-        return $this->newroute;
-    }
     public function getRoute() {
       
         $address = $this->getAddress();
-        $class = new $this->route[$address]['class'](); 
+        $class =   new $this->route[$address]['class'](); 
+        
         $function = $this->route[$address]['function'];
         $template = $this->route[$address]['template'];
         $databaseType = $this->route[$address]['databaseType'];
+        $isAdmin = $this->route[$address]['isAdmin'];
 
-        return $class->$function($databaseType, $template);
+        return $class->$function($databaseType, $template, $isAdmin);
 
         }
               

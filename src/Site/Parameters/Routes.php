@@ -7,14 +7,16 @@ use Src\Site\Controller\MainController;
 use Src\Site\Controller\SpecController;
 use Src\Site\Controller\UnknownController;
 use Src\Admin\Parameters\Routing;
+use Src\Admin\Parameters\Routes as AdminRoutes;
 
+Class Routes Extends AdminRoutes{
 
-Class Routes {
+    
+    public function setLinks($pdo, $mysqli, $twig) {
 
-    public function getLinks($pdo, $mysqli, $twig) {
 
         $routing = new Routing();
-      
+
         $specController = new SpecController();
         $mainController = new MainController();
       
@@ -38,14 +40,15 @@ Class Routes {
 
         );
         
-        // $adminRouting->setUnknown(
-        //     $adminRouting->setClass($unknownController), 
-        //     $adminRouting->setFunction('index'),
-        //     $adminRouting->setTemplate($twig)
-        // );
-
-        return $routing->getRoute();
+        
+        $this->routing = $routing->getRoute();
+        return $this->routing;
 
     
-}
+    }
+
+    public function getLinks(){
+        return $this->routing;
+    }
+   
 }

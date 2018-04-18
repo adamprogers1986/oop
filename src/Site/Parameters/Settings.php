@@ -3,6 +3,10 @@ namespace Src\Site\Parameters;
 
 use PDO;
 use mysqli;
+use Src\Site\Parameters\Routes;
+use Src\Admin\Parameters\Routes as AdminRoute;
+
+
 class Settings {
 
     protected $twig;
@@ -48,5 +52,16 @@ class Settings {
         return $twig;
     }
     
+    public function setAllRoutes($pdo, $mysqli, $twig){
+            $routes = new Routes();
+            $adminRoutes = new AdminRoute();
+
+            $this->links = $routes->getLinks($pdo, $mysqli, $twig);
+        
+
+            return $this->links;
+    }
+
+   
 
 }

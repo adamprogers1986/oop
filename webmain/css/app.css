@@ -18,10 +18,10 @@
 
 .card-section .card .card-header{
    background-color:white;
-   color: black !important;
+   color: black ;
 }
 .footer .address-section{
-    line-height: 15px !important;
+    line-height: 15px ;
     
 }
 .footer .address-section{
