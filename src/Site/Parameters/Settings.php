@@ -57,8 +57,6 @@ class Settings {
             $adminRoutes = new AdminRoute();
 
             $this->links = $routes->getLinks($pdo, $mysqli, $twig);
-        
-
             return $this->links;
     }
 
