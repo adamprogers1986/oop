@@ -1,65 +1,34 @@
 <?php
-namespace Src\Site\Parameters;
 
-use PDO;
-use mysqli;
-use Src\Site\Parameters\Routes;
-use Src\Admin\Parameters\Routes as AdminRoute;
+use Src\Admin\Parameters\AdminSettings;
+use Src\Admin\Parameters\AdminRoutes;
+use Src\Admin\Parameters\Routing;
+use Src\Site\Routing\Routes;
 
 
-class Settings {
+$settings = new AdminSettings();
+$adminRoutes = new AdminRoutes();
+$routes = new Routes();
 
-    protected $twig;
-    public function __construct() {
-        define('DB_HOST', "localhost");
-        define('DB_USER', 'morty');
-        define('DB_PASSWORD', "Adrog_2016");
-        define('DB_DB', "test");
-    }
 
-    public function setTwig($twig){
-        $this->twig = $twig;
-        return $twig;
-    }
-    public function getPdo() {
+$settings->setTemplating("twig", "../src/Site/Twig", "../Cache");
+$twig = $settings->getTemplating();
 
-        try {
-            $conn = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_DB, DB_USER, DB_PASSWORD);
-            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        } catch (PDOException $e) {
-            echo "Error: " . $e->getMessage();
-        }
-        return $conn;
-    }
+$settings->setDatabase("PDO", "localhost", "test", "morty", "Adrog_2016");
 
-    public function getMysqli() {
-        $conn = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_DB);
+$pdo = $settings->getDatabase();
 
-        // Check connection
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
-   
-        return $conn;
-    }
 
-    public function getTwig(){
-        $twig = $this->twig;
-        $loader = new \Twig_Loader_Filesystem($twig);
-        $twig = new \Twig_Environment($loader, array(
-        //'cache' => '../src/cache',
-        ));
-        return $twig;
-    }
-    
-    public function setAllRoutes($pdo, $mysqli, $twig){
-            $routes = new Routes();
-            $adminRoutes = new AdminRoute();
+// $pdo = $settings->getPdo();
+// $mysqli = $settings->getMysqli();
 
-            $this->links = $routes->getLinks($pdo, $mysqli, $twig);
-            return $this->links;
-    }
+//$arrayobj = new ArrayObject(new NewRoute());
+//$arrayobj->offsetSet(1, 'five');
+//$arrayobj->offsetSet('group', array('g1', 'g2'));
 
-   
 
-}
+
+
+
+//$pdo = null;
+//$mysqli->close();

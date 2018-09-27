@@ -1,9 +1,7 @@
 <?php 
 
-namespace Src\Site\Parameters;
+namespace Src\Site\Routing;
 
-use Src\Admin\Parameters\Routing;
-use Src\Admin\Controller\MainController;
 use Src\Admin\Parameters\AdminRoutes;
 
 class Routes{
@@ -13,8 +11,6 @@ class Routes{
         $adminRoutes->addToRoutes("/", "hello", "you");
         $adminRoutes->addToRoutes("/ssss", "hello", "you");
         $adminRoutes->addToRoutes("/new", "hello", "you");
-      
-        
     }
 
 }

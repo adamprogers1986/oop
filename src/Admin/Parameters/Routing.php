@@ -7,7 +7,8 @@ class Routing {
     protected $class;
     protected $function;
     protected $route;
-
+    protected $database;
+    protected $template;
     
     public function setClass($class){
         $this->class = $class;
@@ -30,9 +31,25 @@ class Routing {
     public function getUrl(){
         return $this->url;
     }
+    public function setDataBase($database){
+        $this->database = $database;
+        return $this;
+    }
 
+    public function getDatabase(){
+        return $this->database;
+    }
+
+    public function setTemplate($template){
+        $this->template = $template;
+        return $this;
+    }
+
+    public function getTemplate(){
+        return $this;
+    }
     public function setRoute(){
-        $this->route[$this->getUrl()] = array("url"=>$this->getUrl(),"function"=>$this->getFunction(), "class"=>$this->getClass());
+        $this->route[$this->getUrl()] = array("url"=>$this->getUrl(),"function"=>$this->getFunction(), "class"=>$this->getClass(), "database"=>$this->getDatabase(), );
       
         return $this->route;
     }
@@ -40,6 +57,8 @@ class Routing {
         
         return $this->route;
     }
+
+    
 
 
 }

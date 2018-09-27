@@ -7,6 +7,7 @@
             "Src\\Site\\Model\\": "src/Site/Model",
             "Src\\Site\\Twig\\": "src/Site/Twig",
             "Src\\Site\\Parameters\\": "src/Site/Parameters",
+            "Src\\Site\\Routing\\": "src/Site/Routing",
             "Src\\Admin\\Controller\\": "src/Admin/Controller",
             "Src\\Admin\\Views\\": "src/Admin/Views",
             "Src\\Admin\\Model\\": "src/Admin/Model",
