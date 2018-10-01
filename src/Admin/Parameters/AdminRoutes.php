@@ -11,40 +11,27 @@ class AdminRoutes Extends Routing{
     protected $url;
     protected $function;
     protected $class;
-    public function __construct(){
+    public function setAdminRoutes(){
 
         $adminController = new AdminController();
-        $this->route = array();
-        $this->route = $this->getRoutes();
-        array_push($this->route, $this->setRoute($this->setUrl("/admin"),$this->setFunction("index"),$this->setClass($adminController)));
-       // array_push($this->route,$this->setRoute($this->setUrl("/admin/edit/page"),$this->setFunction("some"),$this->setClass("new")));
-  
-        return $this->route;
+    //    $this->route = array();
+        $this->setRoute($this->setUrl("/admin"), $this->setFunction("index"),$this->setClass($adminController));
+        $this->setRoute($this->setUrl("/admin/edit/page"), $this->setFunction("index"),$this->setClass($adminController));
+        $this->setRoute($this->setUrl("/admin/edit/page"), $this->setFunction("index"),$this->setClass($adminController));
+        return $this;
 
     }
 
     public function addToRoutes($url, $function, $class){
-        //array_push($this->route, $this->setUrl($url),array("function"=>$this->setFunction($function),"class"=>$this->setClass($class)));
-        array_push($this->route,$this->setRoute($this->setUrl($url),$this->setFunction($function),$this->setClass($class)));
-        return $this->route;
+        $this->setRoute($this->setUrl($url),$this->setFunction($function),$this->setClass($class));
+        return $this;
     }
 
-    public function getAdminRoutes(){
-       
-        $url = parse_url($_SERVER['REQUEST_URI']);
-       
-      //  var_dump($this->getRoutes()["$url"]); 
-        // $class =   new $this->route[$url]['class'](); 
-        
-        // $function = $this->route[$url]['function'];
-        // $template = $this->route[$url]['template'];
-        // $databaseType = $this->route[$url]['database'];
-       
-        //return $class->$function($databaseType, $template);
-        
-
-        //return $this->route;
+    public function getRoutes(){
+        return $this;
     }
+
+    
 
     
 

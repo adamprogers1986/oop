@@ -49,8 +49,8 @@ class Routing {
         return $this;
     }
     public function setRoute(){
-        $this->route[$this->getUrl()] = array("url"=>$this->getUrl(),"function"=>$this->getFunction(), "class"=>$this->getClass(), "database"=>$this->getDatabase(), );
-      
+        $this->route = array("url"=>$this->getUrl(),"function"=>$this->getFunction(), "class"=>$this->getClass(), "database"=>$this->getDatabase(), );
+        
         return $this->route;
     }
     public function getRoutes(){
