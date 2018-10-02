@@ -15,9 +15,10 @@ class AdminRoutes Extends Routing{
 
         $adminController = new AdminController();
     //    $this->route = array();
-        $this->setRoute($this->setUrl("/admin"), $this->setFunction("index"),$this->setClass($adminController));
-        $this->setRoute($this->setUrl("/admin/edit/page"), $this->setFunction("index"),$this->setClass($adminController));
-        $this->setRoute($this->setUrl("/admin/edit/page"), $this->setFunction("index"),$this->setClass($adminController));
+        $this->setRoute($this->setUrl("/adminssss/a", $this->setFunction("index")));
+        $this->setRoute($this->setUrl("/admin"), $this->setFunction("index"));
+        //$this->setRoute();
+        
         return $this;
 
     }

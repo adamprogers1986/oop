@@ -9,7 +9,7 @@ class Routes Extends AdminRoutes{
 
     public function setRoutes(){
         $this->setAdminRoutes();
-  
+      //  $this->setRoute($this->setUrl("/"));
 
         return $this;
     }
@@ -17,22 +17,10 @@ class Routes Extends AdminRoutes{
 
         $url = $_SERVER['REQUEST_URI'];
 
-
-    var_dump($this->getRoutes());
-        // foreach ($this->getRoutes() as $urls){
-        //     var_dump($urls['/admin']);
-        // }
-        // foreach ($this->getRoutes() as $route ){
-        //     var_dump($route);
-        //     if (isset($route[$url])){
-        //     var_dump($route[$url]);
-        //     }
-        //     else{
-        //         echo "There is no page you gay"; die();
-        //     }
-        // }
-        //var_dump($this->getRoutes());
-        return $this;
+       var_dump($this->getRoute()[$url]['function']);
+      
+       
+       // return $this;
 
 
 

@@ -46,14 +46,16 @@ class Routing {
     }
 
     public function getTemplate(){
+        return $this->template;
+    }
+    
+    public function setRoute(){
+        $this->route[$this->getUrl()]= array("url"=>$this->getUrl(), "function"=>$this->getFunction());
+        
         return $this;
     }
-    public function setRoute(){
-        $this->route = array("url"=>$this->getUrl(),"function"=>$this->getFunction(), "class"=>$this->getClass(), "database"=>$this->getDatabase(), );
-        
-        return $this->route;
-    }
-    public function getRoutes(){
+   
+    public function getRoute(){
         
         return $this->route;
     }
