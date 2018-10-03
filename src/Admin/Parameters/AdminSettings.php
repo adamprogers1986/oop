@@ -61,7 +61,7 @@ class AdminSettings {
                 ));
             }
            
-            return $this;
+            return $this->template;
 
         }
     }

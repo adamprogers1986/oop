@@ -50,7 +50,7 @@ class Routing {
     }
     
     public function setRoute(){
-        $this->route[$this->getUrl()]= array("url"=>$this->getUrl(), "function"=>$this->getFunction());
+        $this->route[$this->getUrl()]= array("url"=>$this->getUrl(), "function"=>$this->getFunction(), "class"=> $this->getClass());
         
         return $this;
     }

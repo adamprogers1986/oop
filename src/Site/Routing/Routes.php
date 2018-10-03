@@ -13,27 +13,15 @@ class Routes Extends AdminRoutes{
 
         return $this;
     }
-    public function getAllRoutes(){
+    public function renderPage($databaseType, $templating){
 
         $url = $_SERVER['REQUEST_URI'];
-
-       var_dump($this->getRoute()[$url]['function']);
-      
-       
-       // return $this;
-
-
-
-      //  var_dump($this->getRoutes()["$url"]);
-        // $class =   new $this->route[$url]['class']();
-
-        // $function = $this->route[$url]['function'];
-        // $template = $this->route[$url]['template'];
-        // $databaseType = $this->route[$url]['database'];
-
-        //return $class->$function($databaseType, $template);
-
-
-        //return $this->route;
+var_dump($templating);
+        $function = $this->getRoute()[$url]['function'];
+        $className = $this->getRoute()[$url]['class'];
+        
+        $class = new $className();
+        return $class->$function($databaseType, $templating);
+     
     }
 }
