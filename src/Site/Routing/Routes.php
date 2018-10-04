@@ -8,7 +8,7 @@ use Src\Admin\Parameters\Routing;
 class Routes Extends AdminRoutes{
 
     public function setRoutes(){
-        $this->setAdminRoutes();
+       $this->setAdminRoutes();
       //  $this->setRoute($this->setUrl("/"));
 
         return $this;
@@ -16,7 +16,7 @@ class Routes Extends AdminRoutes{
     public function renderPage($databaseType, $templating){
 
         $url = $_SERVER['REQUEST_URI'];
-var_dump($templating);
+
         $function = $this->getRoute()[$url]['function'];
         $className = $this->getRoute()[$url]['class'];
         

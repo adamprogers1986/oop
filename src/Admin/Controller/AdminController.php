@@ -9,9 +9,7 @@ class AdminController {
 
     public function index($mysqli, $twig) {
 
-        $hello = "hello";
-        
-        return $twig->render('homepage/index.html.twig', array('name' => 'Fabien'));
+       echo $twig->render('homepage/index.html.twig', array('name' => 'Fabien'));
     }
 
 }

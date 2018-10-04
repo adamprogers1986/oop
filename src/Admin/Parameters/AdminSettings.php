@@ -45,7 +45,7 @@ class AdminSettings {
         return $this->conn;
     }
 
-    public function setTemplating($template, $location= null, $cache = null){
+    public function setTemplating($template, $location, $cache){
         switch ($template){
             case "twig":
             
@@ -60,7 +60,7 @@ class AdminSettings {
                     //'cache' => $cache,
                 ));
             }
-           
+            
             return $this->template;
 
         }

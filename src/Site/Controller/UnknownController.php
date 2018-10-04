@@ -6,12 +6,7 @@ class UnknownController {
 
     public function index($twig) {
 
-        
-//        $stmt = $conn->prepare("SELECT * FROM hello");
-//        $stmt->execute();
 
-// set the resulting array to associative
-//        $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
         
         $hello = "hello";
         
