@@ -4,12 +4,13 @@ namespace Src\Site\Routing;
 
 use Src\Admin\Parameters\AdminRoutes;
 use Src\Admin\Parameters\Routing;
-
+use Src\Site\Controller\MainController;
 class Routes Extends AdminRoutes{
 
     public function setRoutes(){
+       $mainController = new MainController();
        $this->setAdminRoutes();
-      //  $this->setRoute($this->setUrl("/"));
+       $this->setRoute($this->setUrl("/"), $this->setFunction("index"), $this->setClass($mainController));
 
         return $this;
     }

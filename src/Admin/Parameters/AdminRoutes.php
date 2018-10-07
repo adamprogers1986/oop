@@ -15,7 +15,7 @@ class AdminRoutes Extends Routing{
 
         $adminController = new AdminController();
 
-        $this->setRoute($this->setUrl("/"), $this->setFunction("index"), $this->setClass($adminController));
+        $this->setRoute($this->setUrl("/admin"), $this->setFunction("index"), $this->setClass($adminController));
  
         return $this;
 
