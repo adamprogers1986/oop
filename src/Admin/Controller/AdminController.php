@@ -13,11 +13,12 @@ class AdminController {
 
         if( !isset( $_SESSION['login'] ) ) {
             echo $twig->render('admin/login.html.twig', array('name' => 'Fabien'));
+           die();
         }
     }
     public function index($mysqli, $twig) {
        
-        echo $twig->render('homepage/index.html.twig', array('name' => 'Fabien'));
+      echo $twig->render('homepage/index.html.twig', array('name' => 'Fabien'));
     }
 
 }
