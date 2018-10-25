@@ -9,11 +9,13 @@ class AdminController {
     public function __construct(){
         $settings = new AdminSettings();
         $settings->setTemplating("twig", "../src/Admin/Twig", "");
+       
         $twig = $settings->getTemplating();
 
         if( !isset( $_SESSION['login'] ) ) {
-            echo $twig->render('admin/login.html.twig', array('name' => 'Fabien'));
-           die();
+           $twig->display('admin/login.html.twig', array('name' => 'Fabien'));
+           exit();
+      
         }
     }
     public function index($mysqli, $twig) {

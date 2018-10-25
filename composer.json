@@ -9,10 +9,12 @@
             "Src\\Site\\Parameters\\": "src/Site/Parameters",
             "Src\\Site\\Routing\\": "src/Site/Routing",
             "Src\\Admin\\Controller\\": "src/Admin/Controller",
+            "Src\\Admin\\Public\\": "src/Admin/Public",
             "Src\\Admin\\Views\\": "src/Admin/Views",
             "Src\\Admin\\Model\\": "src/Admin/Model",
             "Src\\Admin\\Parameters\\": "src/Admin/Parameters",
             "Src\\Parameters\\": "src/Parameters"
+
         }
     },
     "require": {

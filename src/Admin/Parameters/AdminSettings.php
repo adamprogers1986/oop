@@ -50,6 +50,8 @@ class AdminSettings {
             case "twig":
             
             $loader = new \Twig_Loader_Filesystem($location);
+            $loader->addPath('../src/Admin/Public', 'Public');
+           
             if ($cache != null){
                 $this->template = new \Twig_Environment($loader, array(
                 'cache' => $cache,
